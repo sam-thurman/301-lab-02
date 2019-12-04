@@ -1,7 +1,7 @@
 const creaturesArray = []
 
 function Creature(creatureObj) {
-  this.img_url = creatureObj.img_url;
+  this.image_url = creatureObj.image_url;
   this.title = creatureObj.title;
   this.description = creatureObj.description;
   this.keyword = creatureObj.keyword;
@@ -16,10 +16,9 @@ Creature.prototype.render = function () {
   const $newSection = $('<section></section>');
   $newSection.html(myTemplate);
 
-  $newSection.fnd('h2').text(this.title);
-  $newSection.find('img').attr('src', this.img_url);
+  $newSection.find('h2').text(this.title);
+  $newSection.find('img').attr('src', this.image_url);
   $newSection.find('img').attr('alt', this.title);
-  $newSection.find('img').attr('data-horns', this.horns);
   $newSection.find('p').text(this.description);
 
   $('main').append($newSection);
