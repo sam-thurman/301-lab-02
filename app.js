@@ -1,3 +1,5 @@
+'use strict'
+
 const creaturesArray = []
 const keywordArray = []
 
@@ -22,6 +24,7 @@ Creature.prototype.render = function () {
   $newSection.find('img').attr('src', this.image_url);
   $newSection.find('img').attr('alt', this.title);
   $newSection.find('img').attr('data-keyword', this.keyword);
+  $newSection.find('img').attr('class', this.keyword)
   $newSection.find('p').text(this.description);
 
   $('main').append($newSection);
@@ -41,14 +44,22 @@ $.get('page-1.json', data => {
   data.forEach(creature => {
     new Creature(creature).render();
 
-    $('#drop-down-menu').append($('<option></option>').attr('value', creature.keyword).text(creature.keyword).attr('id', creature.keyword))
+    $('#drop-down-menu').append($('<option></option>').attr('value', creature.keyword).text(creature.keyword).attr('class', creature.keyword))
 
   })
 })
 
 
-$('option').on('click', function () {
+$('select').on('change', function () {
+
+  let currentSelection = $('#drop-down-menu').find(':selected').text()
   event.preventDefault();
+
+  $('h2').hide();
   $('img').hide();
-  console.log('clicked')
+  $('p').hide();
+  console.log('clicked');
+  $(`.${currentSelection}`).show();
+
+  console.log(currentSelection)
 })
