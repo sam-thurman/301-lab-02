@@ -4,24 +4,25 @@
 <head>
   <title>The Gallery of Horns</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
 
 <body>
   <header>
-    <h1>The Gallery of Horns</h1>
-    <select>
-      <option value="default">Filter by Keyword</option>
+    <h1 class="heading">The Gallery of Horns</h1>
+    <select id="drop-down-menu" class="drop-down-menu">
+      <option id="drop-down-option" class="drop-down-option" value=""> keywords</option>
     </select>
   </header>
   <main>
     <section id="photo-template">
       <h2></h2>
-      <img src="" alt="">
+      <img src="" alt="" data-keyword="" class="empty-image">
       <p></p>
     </section>
   </main>
   <footer>
-    &copy; 2018 Code Fellows
+    &copy; 2019 Code Fellows
   </footer>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
   <script src="app.js"></script>

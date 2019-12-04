@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+*{
+  font-family: 'Ubuntu', sans-serif;
+}
+.empty-image{
+ visibility: hidden;
+}
+img{
+  height: 100px;
+  float: left;
+  margin: 10px;
+  border: 1px solid rgb(148, 90, 90);
+}
+section {
+  float: left;
+}
+p {
+  clear: left
+}
+footer {
+  clear: both;
+}
