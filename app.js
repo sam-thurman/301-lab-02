@@ -11,7 +11,7 @@ function Creature(creatureObj) {
   this.horns = creatureObj.horns;
 
   creaturesArray.push(this);
-  keywordArray.push(this.keyword);
+  // keywordArray.push(this.keyword);
 }
 
 Creature.prototype.render = function () {
@@ -43,9 +43,10 @@ Creature.prototype.render = function () {
 $.get('page-1.json', data => {
   data.forEach(creature => {
     new Creature(creature).render();
-
-    $('#drop-down-menu').append($('<option></option>').attr('value', creature.keyword).text(creature.keyword).attr('class', creature.keyword))
-
+    if (!keywordArray.includes(creature.keyword)) {
+      keywordArray.push(creature.keyword)
+      $('#drop-down-menu').append($('<option></option>').attr('value', creature.keyword).text(creature.keyword).attr('class', creature.keyword))
+    }
   })
 })
 
