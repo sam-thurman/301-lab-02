@@ -1,7 +1,6 @@
 h1 {
-  margin: auto;
-  align-self: auto;
   font-size: 20pt;
+  margin-bottom: 30px;
 }
 select {
   clear: both;
