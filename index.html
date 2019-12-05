@@ -4,22 +4,34 @@
 <head>
   <title>The Gallery of Horns</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="stylesheet" type="text/css" href="css/reset.css" />
+  <link rel="stylesheet" type="text/css" href="css/base.css" />
+  <link rel="stylesheet" type="text/css" href="css/layout.css" />
+  <link rel="stylesheet" type="text/css" href="css/module.css" />
 </head>
 
-<body>
+<body id="body">
   <header>
     <h1 class="heading">The Gallery of Horns</h1>
     <select id="drop-down-menu" class="drop-down-menu">
-      <option id="drop-down-option" class="drop-down-option" value=""> keywords</option>
+      <option id="drop-down-option" value=""> keyword </option>
     </select>
+    <select id="drop-down-horns" class="drop-down-horns">
+      <option id="drop-down-option-horns" value=""> horns </option>
+    </select>
+    <article id="pagination">
+      <a id="page-1"> Page 1 </p>
+        <a id="page-2"> Page 2 </p>
+    </article>
   </header>
   <main>
-    <section id="photo-template">
-      <h2></h2>
-      <img src="" alt="" data-keyword="" class="empty-image">
-      <p></p>
-    </section>
+    <script id="photo-template-handlebars" type="text/x-handlebars-template">
+      <section>
+        <h2>{{title}}</h2>
+        <img src="{{image_url}}" alt="{{title}}" data-keyword="{{keyword}}" class="{{keyword}}">
+        <p>{{description}}</p>
+      </section>
+  </script>
   </main>
   <footer>
     &copy; 2019 Code Fellows
