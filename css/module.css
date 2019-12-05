@@ -15,10 +15,6 @@ img{
   margin: 10px;
   border: 1px solid rgb(148, 90, 90);
 }
-section {
-  float: left;
-  clear: left;
-}
 p {
-  display: inline-block;
+max-width: 200px
 }

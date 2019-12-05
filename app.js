@@ -17,33 +17,42 @@ function Creature(creatureObj) {
 
 Creature.prototype.render = function () {
 
-  const myTemplate = $('#photo-template-handlebars').html();
-  const $newSection = $('<section></section>');
-  $newSection.html(myTemplate);
 
-  $newSection.find('h2').text(this.title);
-  $newSection.find('img').attr('src', this.image_url);
-  $newSection.find('img').attr('alt', this.title);
-  $newSection.find('img').attr('data-keyword', this.keyword);
-  $newSection.find('img').attr('data-horns', this.horns);
-  $newSection.find('img').attr('class', this.keyword)
-  $newSection.find('p').text(this.description);
 
-  $('main').append($newSection);
 
-  const dropDownMenu = $('#drop-down-option').html();
-  const $newOption = $('<option></option>');
-  $newOption.html(dropDownMenu);
+  var source = $('#photo-template-handlebars').html();
+  var template = Handlebars.compile(source);
+  console.log($('#creatures'))
+  $('#creatures').append(template(this))
 
-  const dropDownMenuHorns = $('#drop-down-option-horns').html();
-  const $newOptionHorns = $('<option></option>');
-  $newOptionHorns.html(dropDownMenuHorns);
 
-  // $newOption.find('option').attr('value', this.keyword)
-  // $newOption.find('option').text(this.keyword)
-  // $newOption.append($)
+  // $newSection.find('h2').text(this.title);
+  // $newSection.find('img').attr('src', this.image_url);
+  // $newSection.find('img').attr('alt', this.title);
+  // $newSection.find('img').attr('data-keyword', this.keyword);
+  // $newSection.find('img').attr('data-horns', this.horns);
+  // $newSection.find('img').attr('class', this.keyword)
+  // $newSection.find('p').text(this.description);
+
+  // $('main').append($newSection);
+
+  // const dropDownMenu = $('#drop-down-option').html();
+  // const $newOption = $('<option></option>');
+  // $newOption.html(dropDownMenu);
+
+  // const dropDownMenuHorns = $('#drop-down-option-horns').html();
+  // const $newOptionHorns = $('<option></option>');
+  // $newOptionHorns.html(dropDownMenuHorns);
+
+  // // $newOption.find('option').attr('value', this.keyword)
+  // // $newOption.find('option').text(this.keyword)
+  // // $newOption.append($)
 
 };
+
+// creaturesArray.forEach(creature => {
+//   $('#creatures').append(new Creature(creature).render());
+// })
 
 
 $.get('page-1.json', data => {
@@ -115,7 +124,6 @@ $('#drop-down-option').click(function () {
     })
   })
 })
-// $('option:nth-of-type(1)')
 
 
 $('#drop-down-menu').on('change', function () {
