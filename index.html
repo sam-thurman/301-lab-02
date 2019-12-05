@@ -21,24 +21,29 @@
         <option id="drop-down-option-horns" value=""> horns </option>
       </select>
       <article id="pagination">
-        <a id="page-1"> Page 1 </p>
-          <a id="page-2"> Page 2 </p>
+        <a id="page-1"> Page 1 </a>
+        <a id="page-2"> Page 2 </a>
       </article>
     </div>
   </header>
   <main>
-    <script id="photo-template-handlebars" type="text/x-handlebars-template">
-      <section>
-        <h2>{{title}}</h2>
-        <img src="{{image_url}}" alt="{{title}}" data-keyword="{{keyword}}" class="{{keyword}}">
-        <p>{{description}}</p>
+    <div id="content">
+      <script id="photo-template-handlebars" type="text/x-handlebars-template">
+        <section>
+          <h2>{{title}}</h2>
+          <img src="{{image_url}}" alt="{{title}}" data-keyword="{{keyword}}" data-horns="{{horns}}" class="{{keyword}}">
+          <p>{{description}}</p>
+          </section>
+      </script>
+      <section id="creatures">
       </section>
-  </script>
+    </div>
   </main>
   <footer>
     &copy; 2019 Code Fellows
   </footer>
   <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.2.0/handlebars.min.js"></script>
   <script src="app.js"></script>
 </body>
 
